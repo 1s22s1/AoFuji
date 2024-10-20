@@ -1,0 +1,13 @@
+name = "AoFuji"
+uuid = "93ff2aba-e757-478f-950f-e9a89a509fab"
+authors = ["原子軌道 <1s22s1@example.com>"]
+version = "1.0.0-DEV"
+
+[compat]
+julia = "1.11"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
