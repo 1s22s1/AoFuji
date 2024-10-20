@@ -1,4 +1,4 @@
-# AoFuji
+# AoFuji(青富士)
 
 This is library for AtCoder Beginner Contests.
 

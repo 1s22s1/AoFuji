@@ -18,18 +18,18 @@ function rle(s)
     return arr
 end
 
-function bfs(s, g)
-    nexts = [s]
+function bfs(graph, start)
+    nexts = [start]
 
-    seen = fill(-1, length(g))
+    seen = fill(-1, length(graph))
     popcount = 0
-    seen[s] = popcount
+    seen[start] = popcount
 
     while !isempty(nexts)
         target_vertex = popfirst!(nexts)
         popcount += 1
 
-        for vertex ∈ g[target_vertex]
+        for vertex ∈ graph[target_vertex]
             if seen[vertex] ≠ -1
                 continue
             end
