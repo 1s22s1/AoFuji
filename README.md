@@ -1,6 +1,6 @@
 # AoFuji(青富士)
 
-![](docs/logo.svg)
+![](docs/logo.png)
 
 This is library for AtCoder Beginner Contests.
 
