@@ -1,4 +1,4 @@
-# AoFuji(青富士)
+# AoFuji
 
 ![](docs/logo.png)
 
