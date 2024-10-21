@@ -1,5 +1,11 @@
 module AoFuji
-function rle(s)
+
+"""
+    rle(s::String)
+
+Run length compression is performed for `s`.
+"""
+function rle(s::String)
     arr = []
     n = length(s)
 
@@ -15,7 +21,7 @@ function rle(s)
         i = j
     end
 
-    return arr
+    return arr::Vector{Any}
 end
 
 function bfs(graph, start)
