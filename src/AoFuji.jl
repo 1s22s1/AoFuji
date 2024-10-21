@@ -21,19 +21,25 @@ function rle(s::String)
         i = j
     end
 
-    return arr::Vector{Any}
+    return arr::Vector{}
 end
 
-function bfs(graph, start)
+
+"""
+    bfs(graph::Vector{}, start::Int)
+
+Perform  breadth first search for adjacency list.
+"""
+function bfs(graph::Vector{}, start::Int)
     nexts = [start]
 
     seen = fill(-1, length(graph))
-    popcount = 0
-    seen[start] = popcount
+    pop_count = 0
+    seen[start] = pop_count
 
     while !isempty(nexts)
         target_vertex = popfirst!(nexts)
-        popcount += 1
+        pop_count += 1
 
         for vertex ∈ graph[target_vertex]
             if seen[vertex] ≠ -1
@@ -41,11 +47,11 @@ function bfs(graph, start)
             end
 
             push!(nexts, vertex)
-            seen[vertex] = popcount
+            seen[vertex] = pop_count
         end
     end
 
-    return seen
+    return seen::Vector{}
 end
 
 end
