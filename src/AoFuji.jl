@@ -54,4 +54,19 @@ function bfs(graph::Vector{}, start::Int)
     return seen::Vector{}
 end
 
+"""
+    tally(array::Vector{})
+
+Returns a hash containing the counts of equal elements.
+"""
+function tally(array::Vector{})
+    dict = Dict()
+
+    for e ∈ array
+        dict[e] = get(dict, e, 0) + 1
+    end
+
+    return dict
+end
+
 end
