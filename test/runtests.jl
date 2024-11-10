@@ -19,4 +19,10 @@ using Test
         @test AoFuji.tally([4, 4, 4, 1]) == Dict(1 => 1, 4 => 3)
         @test AoFuji.tally([1, 2, 3, 4]) == Dict(1 => 1, 2 => 1, 3 => 1, 4 => 1)
     end
+
+    @testset "bitsearch" begin
+        @test AoFuji.bitsearch([1]) |> sort == [[], [1]] |> sort
+        @test AoFuji.bitsearch([1, 2]) |> sort == [[], [1], [2], [1, 2]] |> sort
+        @test AoFuji.bitsearch([1, 2, 3]) |> sort == [[], [1], [2], [3], [1, 2], [2, 3], [1, 3], [1, 2, 3]] |> sort
+    end
 end
