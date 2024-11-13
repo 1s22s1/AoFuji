@@ -33,7 +33,7 @@ function bfs(graph::Vector{}, start::Int)
     nexts = [start]
 
     seen = fill(-1, length(graph))
-    seen[start] = 1
+    seen[start] = 0
 
     while !isempty(nexts)
         target_vertex = popfirst!(nexts)
@@ -44,7 +44,7 @@ function bfs(graph::Vector{}, start::Int)
             end
 
             push!(nexts, vertex)
-            seen[vertex] = 1
+            seen[vertex] = seen[target_vertex] + 1
         end
     end
 
