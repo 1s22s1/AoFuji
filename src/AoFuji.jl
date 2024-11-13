@@ -68,6 +68,11 @@ function tally(array::Vector{})
     return dict
 end
 
+"""
+    bitsearch(array::Vector{})
+
+Returns bit patterns.
+"""
 function bitsearch(array::Vector{})
     n = length(array)
 
