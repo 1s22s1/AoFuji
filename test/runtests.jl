@@ -28,3 +28,7 @@ using Test
         @test AoFuji.bitsearch([1, 2, 3]) |> sort == [[], [1], [2], [3], [1, 2], [2, 3], [1, 3], [1, 2, 3]] |> sort
     end
 end
+
+@testset "All" begin
+    include("misc.jl")
+end
