@@ -52,11 +52,11 @@ function bfs(graph::Vector{}, start::Int)
 end
 
 """
-    tally(array::Vector{})
+    tally(array::Union{Vector{Int}, String})
 
 Returns a hash containing the counts of equal elements.
 """
-function tally(array::Vector{})
+function tally(array::Union{Vector{Int}, String})
     dict = Dict()
 
     for e ∈ array
