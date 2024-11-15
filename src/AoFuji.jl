@@ -56,7 +56,7 @@ end
 
 Returns a hash containing the counts of equal elements.
 """
-function tally(array::Union{Vector{Int}, String})
+function tally(array::Union{Vector{Int},String})
     dict = Dict()
 
     for e ∈ array
