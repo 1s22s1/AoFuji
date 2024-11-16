@@ -17,11 +17,11 @@ function rle(s::String)
             j += 1
         end
 
-        push!(arr, (s[i], j - i))
+        push!(arr, [s[i], j - i])
         i = j
     end
 
-    return arr::Vector{}
+    return arr
 end
 
 """
@@ -48,7 +48,7 @@ function bfs(graph::Vector{}, start::Int)
         end
     end
 
-    return seen::Vector{}
+    return seen
 end
 
 """

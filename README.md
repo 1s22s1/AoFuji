@@ -15,5 +15,4 @@ This is library for AtCoder Beginner Contests.
 
 ```console
 julia> using JuliaFormatter; format(".")
-false
 ```

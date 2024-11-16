@@ -9,8 +9,8 @@ using Test
     end
 
     @testset "rle" begin
-        @test AoFuji.rle("abbccc") == [('a', 1), ('b', 2), ('c', 3)]
-        @test AoFuji.rle("abc") == [('a', 1), ('b', 1), ('c', 1)]
+        @test AoFuji.rle("abbccc") == [['a', 1], ['b', 2], ['c', 3]]
+        @test AoFuji.rle("abc") == [['a', 1], ['b', 1], ['c', 1]]
         @test AoFuji.rle("") == []
     end
 end
