@@ -1,6 +1,6 @@
 using Test
 
-@testset "graph.jl" begin
+@testset "algorithm.jl" begin
     @testset "bitsearch" begin
         @test AoFuji.bitsearch([1]) |> sort == [[], [1]] |> sort
         @test AoFuji.bitsearch([1, 2]) |> sort == [[], [1], [2], [1, 2]] |> sort
