@@ -1,6 +1,6 @@
 module Algorithm
 """
-    rle(s::String)
+    rle(arr::Union{Vector{Int}, String})
 
 arrを対象にして連長圧縮をする。
 """
