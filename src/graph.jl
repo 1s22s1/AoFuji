@@ -25,23 +25,4 @@ function bfs(graph::Vector{}, start::Int)::Vector{}
 
     return seen
 end
-
-"""
-    isbipartialgraph(graph::Vector{})::Bool
-
-二部グラフかどうか判定する。
-"""
-function isbipartialgraph(graph::Vector{})::Bool
-    seen = bfs(graph, 1)
-
-    isbipartial = true
-
-    for i ∈ eachindex(graph)
-        if any(x -> seen[x] % 2 == seen[i] % 2, graph[i])
-            isbipartial = false
-        end
-    end
-
-    return isbipartial
-end
 end
