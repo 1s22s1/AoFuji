@@ -1,10 +1,10 @@
 module Algorithm
 """
-    bitsearch(array::Vector{Int})
+    bitsearch(array::Vector{Int})::Vector{Vector{Int}}
 
 ビット全探索の組み合わせを返す。
 """
-function bitsearch(array::Vector{Int})
+function bitsearch(array::Vector{Int})::Vector{Vector{Int}}
     n = length(array)
 
     s = []
@@ -24,11 +24,11 @@ function bitsearch(array::Vector{Int})
 end
 
 """
-    rle(arr::Union{Vector{Int}, String})
+    rle(arr::Union{Vector{Int}, String})::Vector{Vector{Int}}
 
 arrを対象にして連長圧縮をする。
 """
-function rle(arr::Union{Vector{Int}, String})
+function rle(arr::Union{Vector{Int},String})::Vector{Vector{}}
     result = []
     n = length(arr)
 

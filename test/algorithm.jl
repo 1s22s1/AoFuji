@@ -13,6 +13,7 @@ using Test
         @test AoFuji.Algorithm.rle("abc") == [['a', 1], ['b', 1], ['c', 1]]
         @test AoFuji.Algorithm.rle("") == []
 
-        @test AoFuji.Algorithm.rle([2, 3, 1, 1, 2, 2, 1, 1]) == [[2, 1], [3, 1], [1, 2], [2, 2], [1, 2]]
+        @test AoFuji.Algorithm.rle([2, 3, 1, 1, 2, 2, 1, 1]) ==
+              [[2, 1], [3, 1], [1, 2], [2, 2], [1, 2]]
     end
 end
