@@ -17,28 +17,4 @@ function tally(array::Union{Vector{Int}, String})
 
     return dict
 end
-
-"""
-    bitsearch(array::Vector{})
-
-Returns bit patterns.
-"""
-function bitsearch(array::Vector{})
-    n = length(array)
-
-    s = []
-    for bit ∈ 0:(1<<n)-1
-        t = []
-
-        for i ∈ 0:n-1
-            if bit & 1 << i ≠ 0
-                push!(t, array[i+1])
-            end
-        end
-
-        push!(s, t)
-    end
-
-    return s
-end
 end

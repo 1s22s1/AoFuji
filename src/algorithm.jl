@@ -1,5 +1,29 @@
 module Algorithm
 """
+    bitsearch(array::Vector{Int})
+
+ビット全探索の組み合わせを返す。
+"""
+function bitsearch(array::Vector{Int})
+    n = length(array)
+
+    s = []
+    for bit ∈ 0:(1<<n)-1
+        t = []
+
+        for i ∈ 0:n-1
+            if bit & 1 << i ≠ 0
+                push!(t, array[i+1])
+            end
+        end
+
+        push!(s, t)
+    end
+
+    return s
+end
+
+"""
     rle(arr::Union{Vector{Int}, String})
 
 arrを対象にして連長圧縮をする。
