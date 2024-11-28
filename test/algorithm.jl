@@ -9,7 +9,8 @@ using Test
     end
 
     @testset "runlengthencodeing" begin
-        @test AoFuji.Algorithm.runlengthencodeing("abbccc") == [['a', 1], ['b', 2], ['c', 3]]
+        @test AoFuji.Algorithm.runlengthencodeing("abbccc") ==
+              [['a', 1], ['b', 2], ['c', 3]]
         @test AoFuji.Algorithm.runlengthencodeing("abc") == [['a', 1], ['b', 1], ['c', 1]]
         @test AoFuji.Algorithm.runlengthencodeing("") == []
 
