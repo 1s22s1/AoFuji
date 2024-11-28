@@ -1,26 +1,14 @@
 module Algorithm
+
+using IterTools
+
 """
     bitsearch(array::Vector{Int})::Vector{Vector{Int}}
 
 ビット全探索の組み合わせを返す。
 """
 function bitsearch(array::Vector{Int})::Vector{Vector{Int}}
-    n = length(array)
-
-    s = []
-    for bit ∈ 0:(1<<n)-1
-        t = []
-
-        for i ∈ 0:n-1
-            if bit & 1 << i ≠ 0
-                push!(t, array[i+1])
-            end
-        end
-
-        push!(s, t)
-    end
-
-    return s
+    return IterTools.subsets(array) |> collect
 end
 
 """
