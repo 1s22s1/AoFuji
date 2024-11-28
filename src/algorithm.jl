@@ -1,16 +1,5 @@
 module Algorithm
 
-using IterTools
-
-"""
-    bitsearch(array::Vector{Int})::Vector{Vector{Int}}
-
-ビット全探索の組み合わせを返す。
-"""
-function bitsearch(array::Vector{Int})::Vector{Vector{Int}}
-    return IterTools.subsets(array) |> collect
-end
-
 """
     runlengthencodeing(arr::Union{Vector{Int},String})::Vector{Vector{}}
 

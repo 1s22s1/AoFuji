@@ -1,4 +1,6 @@
 using Test
+using IterTools
+
 @testset "misc.jl" begin
     @testset "8進数の11を10進数へ変換" begin
         @test parse(Int, "11", base = 8) == 9
@@ -35,5 +37,12 @@ using Test
         @test searchsortedlast([1, 2, 3, 4, 5, 6], 3) == 3
         @test searchsortedlast([1, 2, 2, 3, 3, 3], 3) == 6
         @test searchsortedlast([1, 2], 3) == 2
+    end
+
+    @testset "ビット全探索の組み合わせを取得" begin
+        @test collect(IterTools.subsets([1])) |> sort == [[], [1]] |> sort
+        @test collect(IterTools.subsets([1, 2])) |> sort == [[], [1], [2], [1, 2]] |> sort
+        @test collect(IterTools.subsets([1, 2, 3])) |> sort ==
+              [[], [1], [2], [3], [1, 2], [2, 3], [1, 3], [1, 2, 3]] |> sort
     end
 end
