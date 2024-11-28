@@ -24,11 +24,11 @@ function bitsearch(array::Vector{Int})::Vector{Vector{Int}}
 end
 
 """
-    rle(arr::Union{Vector{Int}, String})::Vector{Vector{Int}}
+    runlengthencodeing(arr::Union{Vector{Int},String})::Vector{Vector{}}
 
 arrを対象にして連長圧縮をする。
 """
-function rle(arr::Union{Vector{Int},String})::Vector{Vector{}}
+function runlengthencodeing(arr::Union{Vector{Int},String})::Vector{Vector{}}
     result = []
     n = length(arr)
 
