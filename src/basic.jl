@@ -23,7 +23,6 @@ function split_array(array::Vector{Int}, indexes::Vector{Int})::Vector{Vector{In
     result = []
 
     if isempty(indexes)
-        @show "hit"
         push!(result, array)
 
         return result
