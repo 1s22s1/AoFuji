@@ -8,4 +8,11 @@ using Test
 
         @test AoFuji.Basic.tally("baba") == Dict('a' => 2, 'b' => 2)
     end
+
+    @testset "split_array" begin
+        arr = [1, 2, 3, 4, 5]
+
+        @test AoFuji.Basic.split_array(arr, [1]) == [[1], [2, 3, 4, 5]]
+        @test AoFuji.Basic.split_array(arr, [1, 3]) == [[1], [2, 3], [4, 5]]
+    end
 end
