@@ -45,4 +45,8 @@ using IterTools
         @test collect(IterTools.subsets([1, 2, 3])) |> sort ==
               [[], [1], [2], [3], [1, 2], [2, 3], [1, 3], [1, 2, 3]] |> sort
     end
+
+    @testset "文字列をコードとして実行する" begin
+        @test eval(Meta.parse("1 + 1")) == 2
+    end
 end
