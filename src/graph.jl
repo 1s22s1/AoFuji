@@ -31,13 +31,15 @@ end
 
 startを始点として幅優先探索を行う。AtCoder向け。
 """
-function maze_bfs(maze::Vector{Vector{String}}, start::Vector{})::Matrix{}
+function maze_bfs(maze::Vector{Vector{String}}, starts::Vector{})::Matrix{}
     h = length(maze)
     w = length(maze[begin])
     seen = fill(-1, h, w)
 
-    nexts = [start]
-    seen[start[begin], start[end]] = 0
+    nexts = deepcopy(starts)
+    for start ∈ starts
+        seen[start[begin], start[end]] = 0
+    end
 
     while !isempty(nexts)
         cur_pos = popfirst!(nexts)
