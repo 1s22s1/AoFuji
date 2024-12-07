@@ -10,6 +10,6 @@ using Test
     @testset "maze_bfs" begin
         maze = [[".", ".", ".", "."], ["#", ".", ".", "."], [".", "#", ".", "#"]]
 
-        @test AoFuji.Graph.maze_bfs(maze, 3, 4) == [0 1 2 3; -1 2 3 4; -1 -1 4 -1]
+        @test AoFuji.Graph.maze_bfs(maze, [1, 1]) == [0 1 2 3; -1 2 3 4; -1 -1 4 -1]
     end
 end
