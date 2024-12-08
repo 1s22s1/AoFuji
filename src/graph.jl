@@ -48,7 +48,7 @@ function maze_bfs(maze::Vector{Vector{String}}, starts::Vector{})::Matrix{}
             next_x = cur_pos[begin] + x
             next_y = cur_pos[end] + y
 
-            if 1 ≤ next_x ≤ h && 1 ≤ next_y ≤ w && maze[next_x][next_y] == "." && seen[next_x, next_y] == -1
+            if next_x ∈ 1:h && next_y ∈ 1:w && maze[next_x][next_y] == "." && seen[next_x, next_y] == -1
                 push!(nexts, [next_x, next_y])
 
                 seen[next_x, next_y] = seen[cur_pos[begin], cur_pos[end]] + 1
