@@ -4,11 +4,13 @@ module Graph
 
 startを始点として幅優先探索を行う。隣接リスト形式向け。
 """
-function bfs(graph::Vector{}, start::Int)::Vector{}
-    nexts = [start]
-
+function bfs(graph::Vector{}, starts::Vector{Int})::Vector{}
     seen = fill(-1, length(graph))
-    seen[start] = 0
+
+    nexts = deepcopy(starts)
+    for start ∈ starts
+        seen[start] = 0
+    end
 
     while !isempty(nexts)
         target_vertex = popfirst!(nexts)
