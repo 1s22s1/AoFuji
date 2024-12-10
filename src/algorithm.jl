@@ -1,11 +1,11 @@
 module Algorithm
 
 """
-    runlengthencodeing(arr::Union{Vector{Int},String})::Vector{Vector{}}
+    runlengthencodeing(arr::Union{Vector{Int},String})::Vector{Vector{Any}}
 
 arrを対象にして連長圧縮をする。
 """
-function runlengthencodeing(arr::Union{Vector{Int},String})::Vector{Vector{}}
+function runlengthencodeing(arr::Union{Vector{Int},String})::Vector{Vector{Any}}
     result = []
     n = length(arr)
 

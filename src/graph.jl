@@ -1,10 +1,10 @@
 module Graph
 """
-    bfs(graph::Vector{}, start::Int)::Vector{}
+    bfs(graph::Vector{Vector{Int64}}, starts::Vector{Int64})::Vector{Int64}
 
 startを始点として幅優先探索を行う。隣接リスト形式向け。
 """
-function bfs(graph::Vector{}, starts::Vector{Int})::Vector{}
+function bfs(graph::Vector{Vector{Int64}}, starts::Vector{Int64})::Vector{Int64}
     seen = fill(-1, length(graph))
 
     nexts = deepcopy(starts)
@@ -29,11 +29,11 @@ function bfs(graph::Vector{}, starts::Vector{Int})::Vector{}
 end
 
 """
-    maze_bfs(maze::Vector{Vector{Char}}, starts::Vector{})::Matrix{}
+    maze_bfs(maze::Vector{Vector{SubString{String}}}, starts::Vector{Vector{Int64}})::Matrix{Int64}
 
 startを始点として幅優先探索を行う。AtCoder向け。
 """
-function maze_bfs(maze::Vector{Vector{Char}}, starts::Vector{Vector{Int64}})::Matrix{}
+function maze_bfs(maze::Vector{Vector{SubString{String}}}, starts::Vector{Vector{Int64}})::Matrix{Int64}
     h = length(maze)
     w = length(maze[begin])
     seen = fill(-1, h, w)
@@ -50,7 +50,7 @@ function maze_bfs(maze::Vector{Vector{Char}}, starts::Vector{Vector{Int64}})::Ma
             next_x = cur_pos[begin] + x
             next_y = cur_pos[end] + y
 
-            if next_x ∈ 1:h && next_y ∈ 1:w && maze[next_x][next_y] == '.' && seen[next_x, next_y] == -1
+            if next_x ∈ 1:h && next_y ∈ 1:w && maze[next_x][next_y] == "." && seen[next_x, next_y] == -1
                 push!(nexts, [next_x, next_y])
 
                 seen[next_x, next_y] = seen[cur_pos[begin], cur_pos[end]] + 1
