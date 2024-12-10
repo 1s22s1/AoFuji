@@ -29,11 +29,11 @@ function bfs(graph::Vector{}, starts::Vector{Int})::Vector{}
 end
 
 """
-    maze_bfs(maze::Vector{Vector{String}}, start::Vector{})::Matrix{}
+    maze_bfs(maze::Vector{Vector{SubString{String}}}, starts::Vector{})::Matrix{}
 
 startを始点として幅優先探索を行う。AtCoder向け。
 """
-function maze_bfs(maze::Vector{Vector{String}}, starts::Vector{})::Matrix{}
+function maze_bfs(maze::Vector{Vector{SubString{String}}}, starts::Vector{})::Matrix{}
     h = length(maze)
     w = length(maze[begin])
     seen = fill(-1, h, w)
