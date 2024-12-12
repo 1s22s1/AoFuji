@@ -7,7 +7,7 @@ startを始点として幅優先探索を行う。隣接リスト形式向け。
 function bfs(graph::Vector{Vector{Int64}}, starts::Vector{Int64})::Vector{Int64}
     seen = fill(-1, length(graph))
 
-    nexts = deepcopy(starts)
+    nexts = starts
     for start ∈ starts
         seen[start] = 0
     end
@@ -38,7 +38,7 @@ function maze_bfs(maze::Vector{Vector{SubString{String}}}, starts::Vector{Vector
     w = length(maze[begin])
     seen = fill(-1, h, w)
 
-    nexts = deepcopy(starts)
+    nexts = starts
     for start ∈ starts
         seen[start[begin], start[end]] = 0
     end
