@@ -2,7 +2,7 @@ module Graph
 """
     bfs(graph::Vector{Vector{Int64}}, starts::Vector{Int64})::Vector{Int64}
 
-startを始点として幅優先探索を行う。隣接リスト形式向け。
+startsを始点として幅優先探索を行う。隣接リスト形式向け。
 """
 function bfs(graph::Vector{Vector{Int64}}, starts::Vector{Int64})::Vector{Int64}
     seen = fill(-1, length(graph))
@@ -31,7 +31,7 @@ end
 """
     maze_bfs(maze::Vector{Vector{SubString{String}}}, starts::Vector{Vector{Int64}})::Matrix{Int64}
 
-startを始点として幅優先探索を行う。AtCoder向け。
+startsを始点として幅優先探索を行う。AtCoder向け。
 """
 function maze_bfs(maze::Vector{Vector{SubString{String}}}, starts::Vector{Vector{Int64}})::Matrix{Int64}
     h = length(maze)
